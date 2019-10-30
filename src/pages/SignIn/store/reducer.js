@@ -16,7 +16,6 @@ export default handleActions(
       loaders: { ...state.loaders, ...payload }
     }),
     [types.SIGNIN.SUCCESS]: (state, { payload }) => {
-      console.tron.log(`red`);
       return {
         ...state,
         token: payload,

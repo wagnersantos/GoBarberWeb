@@ -8,7 +8,6 @@ import store from 'store';
 
 const RouteWrapper = ({ component: Component, isPrivate, ...rest }) => {
   const { signed } = store.getState().auth;
-  console.tron.log(store.getState());
   const Layout = signed ? DefaultLayout : AuthLayout;
 
   if (!signed && isPrivate) {
