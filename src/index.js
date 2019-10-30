@@ -3,15 +3,12 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
-import { GlobalStyle } from 'core/assets/style/global';
-import theme from 'core/assets/style/theme';
-import rootSagas from './sagas';
-import { store, sagaMiddleware } from './store';
-import Routes from './routes';
-
 import 'config/ReactotronConfig';
 
-sagaMiddleware.run(rootSagas);
+import { GlobalStyle } from 'core/assets/style/global';
+import theme from 'core/assets/style/theme';
+import store from './store';
+import Routes from './routes';
 
 const renderApp = () => {
   const app = (

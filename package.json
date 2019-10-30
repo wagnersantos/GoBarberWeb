@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rocketseat/unform": "^1.6.1",
     "axios": "^0.19.0",
     "lodash": "^4.17.15",
+    "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -16,7 +18,8 @@
     "redux": "^4.0.4",
     "redux-actions": "^2.6.5",
     "redux-saga": "^1.1.1",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "yup": "^0.27.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
