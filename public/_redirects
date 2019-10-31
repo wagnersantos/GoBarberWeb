@@ -1,7 +1,7 @@
-/ * /index.html 404
+/ * /index.html
 
-/dashboard /login 404
-/profile /login 404
+/dashboard /login
+/profile /login
 
-/login /dashbaord 404
-/register /dashbaord 404
+/login /dashbaord
+/register /dashbaord
