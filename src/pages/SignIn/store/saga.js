@@ -1,14 +1,13 @@
 import { call, put, takeLatest, all } from 'redux-saga/effects';
+import { toast } from 'react-toastify';
 
-import { Providers } from 'core/providers';
+// import { Providers } from 'core/providers';
 import { actions, types } from './actions';
 import history from 'core/utils/history';
 
-const typeData = 'login/signin';
-
 function* signIn({ payload }) {
   try {
-    yield put(actions.updateLoaders({ loginList: true }));
+    yield put(actions.updateLoaders({ authLoading: true }));
 
     // const response = yield call(Providers, '', {
     //   action: 'LOGIN',
@@ -20,7 +19,7 @@ function* signIn({ payload }) {
     // const { token, user } = response.data;
 
     // if (!user.provider) {
-    //   console.tron.error('Usuario não é um prestador');
+    // toast.error('Usuario não é um prestador');
     //   return;
     // }
 
@@ -28,21 +27,21 @@ function* signIn({ payload }) {
 
     history.push('/dashboard');
   } catch (error) {
-    // throw error;
+    toast.error('Falha no cadastro, verifique seus dados!');
   } finally {
-    yield put(actions.updateLoaders({ loginList: false }));
+    yield put(actions.updateLoaders({ authLoading: false }));
   }
 }
 
 function* logout({ payload }) {
   try {
-    yield put(actions.updateLoaders({ loginList: true }));
+    yield put(actions.updateLoaders({ authLoading: true }));
 
     yield put(actions.getUser.receive());
   } catch (error) {
     // throw error;
   } finally {
-    yield put(actions.updateLoaders({ loginList: false }));
+    yield put(actions.updateLoaders({ authLoading: false }));
   }
 }
 

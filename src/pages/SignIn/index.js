@@ -1,11 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
 import logo from 'core/assets/images/logo.svg';
 import { actions } from './store/actions';
+import { selectors } from './store/reducer';
 
 const schema = Yup.object().shape({
   email: Yup.string()
@@ -15,7 +16,11 @@ const schema = Yup.object().shape({
 });
 
 export default function SignIn() {
+  const loading = useSelector(
+    (state) => selectors.getLoaders(state).authLoading
+  );
   const dispatch = useDispatch();
+  const buttonText = loading ? 'Carregando' : 'Acessar';
 
   const handleSubmit = ({ email, password }) => {
     dispatch(actions.signIn.request(email, password));
@@ -29,7 +34,7 @@ export default function SignIn() {
         <Input name="email" type="email" placeholder="Seu e-mail" />
         <Input name="password" type="password" placeholder="Sua senha" />
 
-        <button type="submit">Acessar</button>
+        <button type="submit">{buttonText}</button>
         <Link to="/register">Criar conta gratuita</Link>
       </Form>
     </>

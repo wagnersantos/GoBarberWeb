@@ -5,7 +5,7 @@ const initialState = {
   token: null,
   signed: false,
   loaders: {
-    loginList: false
+    authLoading: false
   }
 };
 
