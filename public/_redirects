@@ -3,5 +3,5 @@
 /dashboard /login
 /profile /login
 
-/login /dashbaord
-/register /dashbaord
+/login /dashboard
+/register /dashboard
