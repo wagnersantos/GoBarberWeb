@@ -2,6 +2,3 @@
 
 /dashboard /login
 /profile /login
-
-/login /dashboard
-/register /dashboard
