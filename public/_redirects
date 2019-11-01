@@ -1,4 +1,7 @@
-/ * /index.html 404
+/ * /index.html
 
-/dashboard /login
-/profile /login
+
+/dashboard /
+/profile /
+/login /
+register /
