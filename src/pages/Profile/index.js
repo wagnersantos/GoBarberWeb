@@ -5,6 +5,7 @@ import { Form, Input } from '@rocketseat/unform';
 import { Container } from './styles';
 import { selectors } from './store/reducer';
 import { actions } from './store/actions';
+import { actions as actionsAuth } from 'pages/SignIn/store/actions';
 
 import AvatarInput from './component/AvatarInput';
 
@@ -12,6 +13,7 @@ export default function Profile() {
   const profile = useSelector((state) => selectors.getProfile(state));
   const dispatch = useDispatch();
   const updateProfile = (data) => dispatch(actions.request(data));
+  const logOut = () => dispatch(actionsAuth.logOut());
 
   const handleSubmit = (data) => updateProfile(data);
 
@@ -42,7 +44,9 @@ export default function Profile() {
         </button>
       </Form>
 
-      <button type="button">Sair</button>
+      <button type="button" onClick={logOut}>
+        Sair
+      </button>
     </Container>
   );
 }

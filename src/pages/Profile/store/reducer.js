@@ -22,6 +22,13 @@ export default handleActions(
       };
     },
 
+    [typesSignIn.LOGOUT]: (state, { payload }) => {
+      return {
+        ...state,
+        profile: null
+      };
+    },
+
     [types.UPDATE_PROFILE.SUCCESS]: (state, { payload }) => {
       return {
         ...state,

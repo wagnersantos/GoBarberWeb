@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { call, put, takeLatest, all } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 
@@ -33,21 +34,13 @@ function* signIn({ payload }) {
   }
 }
 
-function* logout({ payload }) {
-  try {
-    yield put(actions.updateLoaders({ authLoading: true }));
-
-    yield put(actions.getUser.receive());
-  } catch (error) {
-    // throw error;
-  } finally {
-    yield put(actions.updateLoaders({ authLoading: false }));
-  }
+function logOut({ payload }) {
+  history.push('/');
 }
 
 export default function* root() {
   yield all([
     takeLatest(types.SIGNIN.REQUEST, signIn),
-    takeLatest(types.LOGOUT.REQUEST, logout)
+    takeLatest(types.LOGOUT, logOut)
   ]);
 }

@@ -15,11 +15,20 @@ export default handleActions(
       ...state,
       loaders: { ...state.loaders, ...payload }
     }),
+
     [types.SIGNIN.SUCCESS]: (state, { payload }) => {
       return {
         ...state,
         token: payload,
         signed: true
+      };
+    },
+
+    [types.LOGOUT]: (state) => {
+      return {
+        ...state,
+        token: null,
+        signed: false
       };
     }
   },
