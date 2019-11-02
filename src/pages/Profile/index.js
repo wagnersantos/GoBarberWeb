@@ -1,12 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { Form, Input } from '@rocketseat/unform';
 import { Container } from './styles';
 import { selectors } from './store/reducer';
+import { actions } from './store/actions';
 
 export default function Profile() {
   const profile = useSelector((state) => selectors.getProfile(state));
+  const dispatch = useDispatch();
+  const updateProfile = (data) => dispatch(actions.request(data));
+
+  const handleSubmit = (data) => updateProfile(data);
 
   return (
     <Container>
@@ -28,7 +33,9 @@ export default function Profile() {
           placeholder="Confirmação de senha"
         />
 
-        <button type="submit">Atualizar</button>
+        <button type="submit" onClick={handleSubmit}>
+          Atualizar
+        </button>
       </Form>
 
       <button type="button">Sair</button>

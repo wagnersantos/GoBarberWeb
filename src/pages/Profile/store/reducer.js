@@ -2,7 +2,10 @@ import { handleActions } from 'redux-actions';
 import { types } from 'pages/SignIn/store/actions';
 
 const initialState = {
-  profile: null
+  profile: null,
+  loaders: {
+    profileLoading: false
+  }
 };
 
 export default handleActions(
@@ -14,6 +17,12 @@ export default handleActions(
           name: 'Wagner Santos',
           email: 'wagtvc@gmail.com'
         }
+      };
+    },
+    [types.UPDATE_PROFILE.SUCCESS]: (state, { payload }) => {
+      return {
+        ...state,
+        profile: payload
       };
     }
   },
