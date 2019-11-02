@@ -9,9 +9,9 @@ function* updateProfile({ payload }) {
   try {
     yield put(actions.updateLoaders({ profileLoading: true }));
 
-    // const { name, email, ...rest } = payload.data;
+    // const { name, email,avatar_id ...rest } = payload.data;
     // const profile = object.assign(
-    //   { name, email },
+    //   { name, email ,avatar_id},
     //   rest.oldPassword ? rest : {}
     // );
 

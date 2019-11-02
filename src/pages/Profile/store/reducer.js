@@ -1,5 +1,7 @@
 import { handleActions } from 'redux-actions';
-import { types } from 'pages/SignIn/store/actions';
+
+import { types } from './actions';
+import { types as typesSignIn } from 'pages/SignIn/store/actions';
 
 const initialState = {
   profile: null,
@@ -10,7 +12,7 @@ const initialState = {
 
 export default handleActions(
   {
-    [types.SIGNIN.SUCCESS]: (state, { payload }) => {
+    [typesSignIn.SIGNIN.SUCCESS]: (state, { payload }) => {
       return {
         ...state,
         profile: {
@@ -19,6 +21,7 @@ export default handleActions(
         }
       };
     },
+
     [types.UPDATE_PROFILE.SUCCESS]: (state, { payload }) => {
       return {
         ...state,
