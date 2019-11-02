@@ -10,7 +10,10 @@ export default handleActions(
     [types.SIGNIN.SUCCESS]: (state, { payload }) => {
       return {
         ...state,
-        profile: payload
+        profile: {
+          name: 'Wagner Santos',
+          email: 'wagtvc@gmail.com'
+        }
       };
     }
   },
