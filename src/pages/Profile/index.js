@@ -7,7 +7,6 @@ import { selectors } from './store/reducer';
 
 export default function Profile() {
   const profile = useSelector((state) => selectors.getProfile(state));
-  console.log(`pr`, profile);
 
   return (
     <Container>
