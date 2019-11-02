@@ -18,41 +18,41 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 30px;
-  }
 
-  input {
-    background: rgb(0, 0, 0, 0.1);
-    border: 0;
-    border-radius: 4px;
-    height: 44px;
-    padding: 0 15px;
-    color: #fff;
-    margin: 0 0 10px;
+    input {
+      background: rgb(0, 0, 0, 0.1);
+      border: 0;
+      border-radius: 4px;
+      height: 44px;
+      padding: 0 15px;
+      color: #fff;
+      margin: 0 0 10px;
 
-    &::placeholder {
-      color: rgba(255, 255, 255, 0.7);
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
     }
-  }
 
-  span {
-    color: #fb5691;
-    align-self: flex-start;
-    margin: 0 0 10px;
-    font-weight: bold;
-  }
+    span {
+      color: #fb5691;
+      align-self: flex-start;
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
 
-  button {
-    margin: 5px 0 0;
-    height: 44px;
-    background: #3b9eff;
-    font-weight: bold;
-    border: 0;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background 0.2s;
+    button {
+      margin: 5px 0 0;
+      height: 44px;
+      background: #3b9eff;
+      font-weight: bold;
+      border: 0;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: background 0.2s;
 
-    &:hover {
-      background: ${darken(0.05, '#3b9eff')};
+      &:hover {
+        background: ${darken(0.05, '#3b9eff')};
+      }
     }
   }
 
