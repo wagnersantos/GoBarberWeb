@@ -3,7 +3,7 @@ import { lighten } from 'polished';
 
 export const Container = styled.div`
   max-width: 600px;
-  margin: 50px auto;
+  margin: 0 auto;
 
   form {
     display: flex;
@@ -56,7 +56,7 @@ export const Container = styled.div`
 
   > button {
     width: 100%;
-    margin: 10px 0 0;
+    margin: 10px 0 20px;
     height: 44px;
     background: #f64c57;
     font-weight: bold;
