@@ -12,5 +12,5 @@ export const types = {
 
 export const actions = {
   updateLoaders: createAction(types.UPDATE_LOADERS),
-  signIn: createAsyncActions(types.SIGNUP)
+  signUp: createAsyncActions(types.SIGNUP)
 };

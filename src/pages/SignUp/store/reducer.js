@@ -2,8 +2,6 @@ import { handleActions } from 'redux-actions';
 import { types } from './actions';
 
 const initialState = {
-  token: null,
-  signed: false,
   loaders: {
     signupLoading: false
   }
@@ -17,9 +15,7 @@ export default handleActions(
     }),
     [types.SIGNUP.SUCCESS]: (state, { payload }) => {
       return {
-        ...state,
-        token: payload,
-        signed: true
+        ...state
       };
     }
   },
