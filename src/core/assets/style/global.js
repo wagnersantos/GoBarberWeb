@@ -15,7 +15,9 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
   }
 
+
   html, body, #root {
+    width: 100%;
     height: 100%
   }
 
