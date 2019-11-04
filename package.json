@@ -32,6 +32,17 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/.test.js"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "roots": [
+      "<rootDir>/src"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -45,6 +56,9 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.3",
+    "@testing-library/react": "^9.3.1",
+    "@types/jest": "^24.0.21",
     "babel-plugin-module-resolver": "^3.2.0",
     "customize-cra": "^0.8.0",
     "eslint": "^6.6.0",
